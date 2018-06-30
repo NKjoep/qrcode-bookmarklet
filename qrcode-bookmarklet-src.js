@@ -1,4 +1,4 @@
-; (() => {
+; (function() {
   var qriousUrl = 'https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js';
   var id = 'qrious-script-id__' + qriousUrl.replace(/[^\w]|\./g, '_');
   var $body = document.getElementsByTagName('body')[0];
@@ -15,7 +15,7 @@
 
   function generate() {
     var $canvas = document.createElement('canvas');
-    $canvas.addEventListener('click', () => {
+    $canvas.addEventListener('click', function() {
       $canvas.parentNode.removeChild($canvas);
     });
 
