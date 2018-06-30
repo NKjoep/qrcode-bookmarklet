@@ -1,37 +1,7 @@
-## Welcome to GitHub Pages
+## How to use it
 
-You can use the [editor on GitHub](https://github.com/NKjoep/qrcode-bookmarklet/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Drag the bookmarket into your bookmarks bar:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<a href="javascript:; (() => {  var qriousUrl = 'https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js';  var id = 'qrious-script-id__' + qriousUrl.replace(/[^\w]|\./g, '_');  var $body = document.getElementsByTagName('body')[0];  if (!window.QRious) {      var $qriousScript = document.createElement('script');      $qriousScript.setAttribute('src', qriousUrl);      $qriousScript.setAttribute('id', id);      $qriousScript.addEventListener('load', generate);      $body.appendChild($qriousScript);  } else {    generate();  }  function generate() {    var $canvas = document.createElement('canvas');    $canvas.addEventListener('click', () => {      $canvas.parentNode.removeChild($canvas);    });    $canvas.setAttribute('title', 'Click to close');    $canvas.setAttribute('style', [      'position: fixed;',      'right: 2vw;',      'top: 2vh;',      'height: 500px;',      'width: 500px;',      'box-shadow: -9px 15px 6px 3px rgba(0, 0, 0, 0.51);',      'z-index: 9999999;',      'padding: 1vw;',      'background: #2c62b8;',      'border-radius: 1rem;',      'cursor: pointer;'    ].join(''));    new QRious({      element: $canvas,      value: window.location.href,      size: 500,    });    $body.appendChild($canvas);  }})();;)">Qrcode Bookmarket</a>
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/NKjoep/qrcode-bookmarklet/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Click on it whenever needed.
